@@ -6,30 +6,31 @@ namespace TicTacToe
     {
         static void Main()
         {
+            string[] fieldStates = new string[9];
             Console.Write("State of the first field: ");
-            string field1 = Console.ReadLine();
+            fieldStates[0] = Console.ReadLine();
             Console.Write("State of the second field: ");
-            string field2 = Console.ReadLine();
+            fieldStates[1] = Console.ReadLine();
             Console.Write("State of the third field: ");
-            string field3 = Console.ReadLine();
+            fieldStates[2] = Console.ReadLine();
             Console.Write("State of the fourth field: ");
-            string field4 = Console.ReadLine();
+            fieldStates[3] = Console.ReadLine();
             Console.Write("State of the fifth field: ");
-            string field5 = Console.ReadLine();
+            fieldStates[4] = Console.ReadLine();
             Console.Write("State of the sixth field: ");
-            string field6 = Console.ReadLine();
+            fieldStates[5] = Console.ReadLine();
             Console.Write("State of the seventh field: ");
-            string field7 = Console.ReadLine();
+            fieldStates[6] = Console.ReadLine();
             Console.Write("State of the eight field: ");
-            string field8 = Console.ReadLine();
+            fieldStates[7] = Console.ReadLine();
             Console.Write("State of the nine field: ");
-            string field9 = Console.ReadLine();
+            fieldStates[8] = Console.ReadLine();
             Console.WriteLine();
-            Console.WriteLine($" {field1} | {field2} | {field3}");
+            Console.WriteLine($" {fieldStates[0]} | {fieldStates[1]} | {fieldStates[2]}");
             Console.WriteLine("---+---+---");
-            Console.WriteLine($" {field4} | {field5} | {field6}");
+            Console.WriteLine($" {fieldStates[3]} | {fieldStates[4]} | {fieldStates[5]}");
             Console.WriteLine("---+---+---");
-            Console.WriteLine($" {field7} | {field8} | {field9}");
+            Console.WriteLine($" {fieldStates[6]} | {fieldStates[7]} | {fieldStates[8]}");
         }
     }
 }
