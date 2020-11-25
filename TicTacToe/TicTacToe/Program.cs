@@ -24,6 +24,12 @@ namespace TicTacToe
             string field8 = Console.ReadLine();
             Console.Write("State of the nine field: ");
             string field9 = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine($" {field1} | {field2} | {field3}");
+            Console.WriteLine("---+---+---");
+            Console.WriteLine($" {field4} | {field5} | {field6}");
+            Console.WriteLine("---+---+---");
+            Console.WriteLine($" {field7} | {field8} | {field9}");
         }
     }
 }
