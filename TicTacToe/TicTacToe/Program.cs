@@ -6,6 +6,21 @@ namespace TicTacToe
     {
         static void Main()
         {
+            double x = 123;
+            double remainder = x % 2;
+            if (remainder == 0)
+            {
+                Console.WriteLine("Number is even");
+            } else
+            {
+                Console.WriteLine("Number is odd");
+            }
+
+            if (remainder == 0)
+                Console.WriteLine("asdfad");
+            else
+                Console.Write("Sadf");
+
             string[] fieldStates = new string[9];
             Console.Write("State of the first field: ");
             fieldStates[0] = Console.ReadLine();
