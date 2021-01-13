@@ -17,13 +17,28 @@ namespace PyramidDrawer
                 int padding = height - row - 1;
                 for (int i = 0; i < padding; i++)
                 {
-                    Console.Write(" ");
+                    Console.Write("/");
                 }
                 for (int i = 0; i < numberOfAsterikses; i++)
                 {
                     Console.Write("*");
                 }
+                for (int i = 0; i < padding; i++)
+                {
+                    Console.Write("\\");
+                }
                 Console.WriteLine();
+            }
+
+
+            string variable = Console.ReadLine();
+
+            if (variable == "asdf")
+            {
+                Console.WriteLine("true");
+            } else
+            {
+                Console.WriteLine("false");
             }
         }
     }

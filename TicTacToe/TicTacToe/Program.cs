@@ -6,21 +6,35 @@ namespace TicTacToe
     {
         static void Main()
         {
-            double x = 123;
-            double remainder = x % 2;
-            if (remainder == 0)
+            Console.WriteLine("Hello. Welcome to Tic-Tac-Toe game, please select an option:\n" +
+                "1) Play game\n" +
+                "2) About author\n" +
+                "3) Exit\n");
+            Console.Write("Choosen option: ");
+            Menu:
+            string option = Console.ReadLine();
+            switch (option)
             {
-                Console.WriteLine("Number is even");
-            } else
-            {
-                Console.WriteLine("Number is odd");
+                case "1":
+                    PlayGame();
+                    goto Menu;
+                    break;
+                case "2":
+                    ShowInfo();
+                    goto Menu;
+                    break;
+                case "3":
+                    Environment.Exit(0);
+                    break;
             }
+        }
+        private static void ShowInfo()
+        {
+            Console.WriteLine("Some info");
+        }
 
-            if (remainder == 0)
-                Console.WriteLine("asdfad");
-            else
-                Console.Write("Sadf");
-
+        private static void PlayGame()
+        {
             string[] fieldStates = new string[9];
             Console.Write("State of the first field: ");
             fieldStates[0] = Console.ReadLine();
