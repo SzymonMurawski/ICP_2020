@@ -6,28 +6,35 @@ namespace TicTacToe
     {
         static void Main()
         {
-            Console.WriteLine("Hello. Welcome to Tic-Tac-Toe game, please select an option:\n" +
+            Console.WriteLine("Hello. Welcome to Tic-Tac-Toe game");
+            while (true)
+            {
+                RunMenu();
+            }
+        }
+
+        private static void RunMenu()
+        {
+            Console.WriteLine("Please select an option:\n" +
                 "1) Play game\n" +
                 "2) About author\n" +
                 "3) Exit\n");
             Console.Write("Choosen option: ");
-            Menu:
             string option = Console.ReadLine();
             switch (option)
             {
                 case "1":
                     PlayGame();
-                    goto Menu;
                     break;
                 case "2":
                     ShowInfo();
-                    goto Menu;
                     break;
                 case "3":
                     Environment.Exit(0);
                     break;
             }
         }
+
         private static void ShowInfo()
         {
             Console.WriteLine("Some info");
