@@ -14,7 +14,7 @@ namespace StarshipLog
                 string input = Console.ReadLine();
                 if (input == "start")
                 {
-                    LogEntries();
+                    LogEntries2();
                 } else if (input == "exit")
                 {
                     Environment.Exit(0);
@@ -35,6 +35,26 @@ namespace StarshipLog
                     if (input == "stop")
                     {
                         break;
+                    }
+                    sr.WriteLine(input);
+                }
+                sr.WriteLine("\nCaptain");
+            }
+        }
+        static void LogEntries2()
+        {
+            Console.WriteLine("Your are now logging entries Captain. Type stop to finish");
+            string path = "captains_log.txt";
+            using (StreamWriter sr = File.Exists(path) ? File.AppendText(path) : new StreamWriter("captains_log.txt"))
+            {
+                sr.WriteLine($"Stardate {DateTime.Now}");
+                while (true)
+                {
+                    string input = Console.ReadLine();
+                    if (input == "stop")
+                    {
+                        sr.Flush();
+                        Environment.Exit(0);
                     }
                     sr.WriteLine(input);
                 }
