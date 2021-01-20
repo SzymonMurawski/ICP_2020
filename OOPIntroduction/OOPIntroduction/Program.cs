@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOPIntroduction
 {
@@ -8,22 +9,20 @@ namespace OOPIntroduction
         // After finish, display the list of users
         static void Main()
         {
-            string[] People = new string[20];
+            List<string> PeopleList = new List<string>();
             Console.WriteLine("Provide names of users, type END to finish and display this list");
-            for(int i =0; i < People.Length; i++)
+            int iterator = 1;
+            while(true)
             {
-                Console.WriteLine($"{i+1} Person: ");
+                Console.Write($"{iterator++} Person: ");
                 string name = Console.ReadLine();
                 if (name == "END")
                 {
                     break;
                 }
-                People[i] = name;
+                PeopleList.Add(name);
             }
-            for(int i = 0; i < People.Length; i++)
-            {
-                Console.WriteLine(People[i]);
-            }
+            PeopleList.ForEach(elem => Console.WriteLine(elem)); //lambda function
         }
     }
 }
