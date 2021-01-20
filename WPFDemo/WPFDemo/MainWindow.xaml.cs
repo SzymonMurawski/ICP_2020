@@ -20,6 +20,7 @@ namespace WPFDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int turn = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,12 +28,9 @@ namespace WPFDemo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            myOwnTextBlock.Text = firstNameTextBox.Text;
-        }
-
-        private void firstNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            Button button = (Button)sender;
+            button.Content = turn%2 == 0 ? "X" : "O";
+            turn++;
         }
     }
 }
