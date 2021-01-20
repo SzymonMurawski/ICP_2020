@@ -22,9 +22,12 @@ namespace OOPIntroduction
                 }
                 Console.Write("Age:");
                 int age = int.Parse(Console.ReadLine());
-                People.Add(new Person(name, age));
+                Person newPerson = new Person(name, age);
+                newPerson.AddOneYearToAge();
+                People.Add(newPerson);
             }
-            People.ForEach(elem => Console.WriteLine($"Name: {elem.Name}, age: {elem.Age}")); //lambda function
+            //People.ForEach(elem => Console.WriteLine($"Name: {elem.Name}, age: {elem.Age}")); //lambda function
+            People.ForEach(elem => Console.WriteLine(elem.GetFullName())); //lambda function
 
         }
     }
