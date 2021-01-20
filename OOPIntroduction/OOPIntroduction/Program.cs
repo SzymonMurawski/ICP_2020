@@ -9,8 +9,7 @@ namespace OOPIntroduction
         // After finish, display the list of users with names
         static void Main()
         {
-            List<string> PeopleList = new List<string>();
-            List<int> PeopleAge = new List<int>();
+            List<Person> People = new List<Person>();
             Console.WriteLine("Provide names and ages of users, type END to finish and display this list");
             int iterator = 1;
             while(true)
@@ -21,16 +20,12 @@ namespace OOPIntroduction
                 {
                     break;
                 }
-                PeopleList.Add(name);
                 Console.Write("Age:");
                 int age = int.Parse(Console.ReadLine());
-                PeopleAge.Add(age);
+                People.Add(new Person(name, age));
             }
-            //PeopleList.ForEach(elem => Console.WriteLine(elem)); //lambda function
-            for (int i = 0; i< PeopleList.Count; i++)
-            {
-                Console.WriteLine($"Name: {PeopleList[i]}, age: {PeopleAge[i]}");
-            }
+            People.ForEach(elem => Console.WriteLine($"Name: {elem.Name}, age: {elem.Age}")); //lambda function
+
         }
     }
 }
