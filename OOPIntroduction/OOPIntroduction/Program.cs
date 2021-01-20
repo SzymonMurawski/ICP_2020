@@ -9,25 +9,19 @@ namespace OOPIntroduction
         // After finish, display the list of users with names
         static void Main()
         {
-            List<Person> People = new List<Person>();
-            Console.WriteLine("Provide names and ages of users, type END to finish and display this list");
-            int iterator = 1;
-            while(true)
-            {
-                Console.Write($"{iterator++} Person: \n Name:");
-                string name = Console.ReadLine();
-                if (name == "END")
-                {
-                    break;
-                }
-                Console.Write("Age:");
-                int age = int.Parse(Console.ReadLine());
-                Person newPerson = new Person(name, age);
-                newPerson.AddOneYearToAge();
-                People.Add(newPerson);
-            }
-            //People.ForEach(elem => Console.WriteLine($"Name: {elem.Name}, age: {elem.Age}")); //lambda function
-            People.ForEach(elem => Console.WriteLine(elem.GetFullName())); //lambda function
+
+            List<INameable> LivingCreatures = new List<INameable>();
+
+            LivingCreatures.Add(new Person("Szymon", 34));
+            LivingCreatures.Add(new Person("Bill", 21));
+            LivingCreatures.Add(new Person("John", 66));
+
+            LivingCreatures.Add(new Dog("Rex"));
+            LivingCreatures.Add(new Dog("Phil"));
+            LivingCreatures.Add(new Dog("Azor"));
+
+            Console.WriteLine("Names of peoples and dogs:");
+            LivingCreatures.ForEach(elem => Console.WriteLine(elem.GetName())); //lambda function
 
         }
     }

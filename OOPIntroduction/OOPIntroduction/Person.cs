@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OOPIntroduction
 {
-    public class Person
+    public class Person : INameable
     {
         public string Name;
         public int Age;
@@ -14,7 +14,11 @@ namespace OOPIntroduction
             Name = name;
             Age = age;
         }
-        public string GetFullName()
+        public Person(string name)
+        {
+            Name = name;
+        }
+        public string GetName()
         {
             return $"Name: {Name}, age: {Age}";
         }
