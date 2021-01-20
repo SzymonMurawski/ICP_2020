@@ -21,8 +21,9 @@ namespace OOPIntroduction
             LivingCreatures.Add(new Dog("Azor"));
 
             Console.WriteLine("Names of peoples and dogs:");
-            LivingCreatures.ForEach(elem => Console.WriteLine(elem.GetName())); //lambda function
-
+            LivingCreatures.ForEach(
+                elem => Console.WriteLine(elem.GetName())//lambda function
+                ); 
         }
     }
 }
